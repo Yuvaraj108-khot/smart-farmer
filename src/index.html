@@ -578,11 +578,11 @@
             transition: color 1s ease-in-out;
         }
 
+        /* Desktop styles */
         #a {
             display: flex;
             width: 100%;
             height: 300px;
-            /* fixed height */
         }
 
         #b {
@@ -595,7 +595,6 @@
 
         #c {
             flex: 1;
-            /* fills remaining space */
             height: 100%;
             overflow: hidden;
             display: flex;
@@ -603,12 +602,7 @@
             align-items: center;
         }
 
-        #logo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
+        #logo,
         #logo1 {
             width: 100%;
             height: 100%;
@@ -635,8 +629,15 @@
             margin-top: 0;
             padding-top: 0;
             margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding-left: 300px;
+            color: white;
+            background-size: cover;
+            background-position: center;
         }
-
 
         #p {
             display: flex;
@@ -645,8 +646,6 @@
             gap: 50px;
             margin: 40px auto;
             flex-wrap: wrap;
-
-
         }
 
         #p button {
@@ -654,7 +653,6 @@
             height: 180px;
             background-color: #ffffff;
             border: 3px solid #54f66c;
-            /* Static soft blue border */
             border-radius: 16px;
             font-family: 'Poppins', sans-serif;
             display: flex;
@@ -666,14 +664,11 @@
             padding: 10px;
             text-align: center;
             box-shadow: none;
-
-            /* No shadow by default */
         }
 
         #p button:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgb(220, 52, 52);
-            /* Shadow appears on hover */
         }
 
         #p i {
@@ -719,13 +714,10 @@
             gap: 30px;
             justify-content: center;
             flex-wrap: nowrap;
-            /* Prevent wrapping */
             margin-top: 60px;
             overflow-x: auto;
-            /* Enable horizontal scroll */
-            padding: 10px;
-            background-color: #FFF8F0;
             padding: 50px;
+            background-color: #FFF8F0;
         }
 
         .card-container::-webkit-scrollbar {
@@ -743,7 +735,6 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             width: 300px;
             flex-shrink: 0;
-            /* Don't shrink when overflowing */
             overflow: hidden;
             transition: transform 0.3s ease;
         }
@@ -804,8 +795,88 @@
         .card:hover {
             transform: translateY(-6px);
             box-shadow: 0 10px 25px rgb(141, 255, 141);
-            /* Deeper green shadow on hover */
         }
+
+        /* 📱 Responsive Fixes for Mobile Devices */
+        @media (max-width: 768px) {
+            #a {
+                flex-direction: column;
+                height: auto;
+            }
+
+            #b,
+            #c {
+                width: 100%;
+                height: 200px;
+            }
+
+            #logo,
+            #logo1 {
+                height: 100%;
+                object-fit: contain;
+            }
+
+            #x {
+                flex-direction: column;
+                align-items: center;
+                padding-left: 0;
+                padding: 20px;
+                height: auto;
+                text-align: center;
+            }
+
+            #z {
+                font-size: 1.5rem;
+                margin-left: 0;
+                padding: 10px;
+                text-align: center;
+            }
+
+            #y {
+                font-size: 1rem;
+                margin-left: 0;
+                padding: 5px 10px;
+                text-align: center;
+            }
+
+            #p {
+                flex-direction: column;
+                gap: 20px;
+                margin: 20px auto;
+            }
+
+            #p button {
+                width: 90%;
+                max-width: 320px;
+                height: auto;
+                padding: 20px;
+            }
+
+            .card-container {
+                flex-wrap: wrap;
+                padding: 20px;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 320px;
+            }
+
+            #a1 {
+                padding: 30px 15px;
+            }
+
+            #a2 {
+                font-size: 24px;
+            }
+
+            #a3 {
+                font-size: 16px;
+            }
+        }
+
 
         footer {
             background-color: #1e6b3e;
